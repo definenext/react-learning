@@ -4,9 +4,43 @@ import "./App.css";
 
 //Mount / Update / Unmount
 class App extends Component {
+  // constructor() {
+  //   super();
+  //   console.log("called constructor");
+  // }
+
   state = {
     company: "Ionic",
+    data: [],
   };
+
+  // static getDerivedStateFromProps() {
+  //   console.log("called getDerivedStateFromProps");
+  // }
+
+  componentDidMount() {
+    console.log("called componentDidMount");
+    setTimeout(() => {
+      this.setState({
+        data: [
+          {
+            name: "Rohit",
+          },
+          {
+            name: "Kapil",
+          },
+        ],
+      });
+    }, 1000);
+  }
+
+  componentDidUpdate() {
+    console.log("called componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("called componentWillUnmount");
+  }
 
   //Parent Component
   // constructor() {
@@ -34,11 +68,22 @@ class App extends Component {
   };
 
   render() {
+    console.log("called render", this.state.data);
+
     return (
       <div className="App">
         <h1>React Learning</h1>
         <p>by {this.state.company} </p>
         <button onClick={this.someEventHandler}>change company name</button>
+
+        {this.state.data.length === 0 ? (
+          <p>loading...</p>
+        ) : (
+          this.state.data.map((student, index) => {
+            return <h3 key={index}>{student.name}</h3>;
+          })
+        )}
+
         <SecondComponent companyName={this.state.company} />
       </div>
     );

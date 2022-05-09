@@ -23,3 +23,14 @@ Learnings
 - State/ Props
 - Class Components (state, constructor)
 - bind & arrow functions
+
+(9th May)
+
+- Lifecycle (Mount / Update / Unmount)
+  https://reactjs.org/docs/react-component.html
+  https://medium.com/codex/the-lifecycle-of-a-react-component-8e01332a068d
+
+(10th May)
+
+- Practices
+- Function Components
