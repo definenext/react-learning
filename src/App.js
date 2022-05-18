@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import SecondComponent from "./SecondComponent";
+//import SecondComponent from "./SecondComponent";
+//import ThirdComponent from "./ThirdComponent";
+import FourComponent from "./FourComponent";
 import "./App.css";
 
 //Mount / Update / Unmount
@@ -19,7 +21,7 @@ class App extends Component {
   // }
 
   componentDidMount() {
-    console.log("called componentDidMount");
+    //console.log("called componentDidMount");
     setTimeout(() => {
       this.setState({
         data: [
@@ -35,11 +37,11 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log("called componentDidUpdate");
+    //console.log("called componentDidUpdate");
   }
 
   componentWillUnmount() {
-    console.log("called componentWillUnmount");
+    //console.log("called componentWillUnmount");
   }
 
   //Parent Component
@@ -64,11 +66,25 @@ class App extends Component {
   someEventHandler = () => {
     this.setState({
       company: "Define Next",
+      data: [
+        {
+          name: "Rohit",
+        },
+        {
+          name: "Kapil",
+        },
+        {
+          name: "Dheeraj",
+        },
+        {
+          name: "Abhishek",
+        },
+      ],
     });
   };
 
   render() {
-    console.log("called render", this.state.data);
+    //console.log("called render", this.state.data);
 
     return (
       <div className="App">
@@ -84,7 +100,12 @@ class App extends Component {
           })
         )}
 
-        <SecondComponent companyName={this.state.company} />
+        {/*Child Components */}
+
+        {/* <SecondComponent companyName={this.state.company} /> */}
+        {/* <ThirdComponent /> */}
+        {/** someValue={1}  */}
+        <FourComponent />
       </div>
     );
   }
