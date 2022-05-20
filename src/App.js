@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import SecondComponent from "./SecondComponent";
 //import ThirdComponent from "./ThirdComponent";
 import FourComponent from "./FourComponent";
+import First from "./functional/First";
 import "./App.css";
 
 //Mount / Update / Unmount
@@ -106,6 +107,8 @@ class App extends Component {
         {/* <ThirdComponent /> */}
         {/** someValue={1}  */}
         <FourComponent />
+        <h4>Functional Components</h4>
+        <First />
       </div>
     );
   }
