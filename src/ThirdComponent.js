@@ -28,7 +28,7 @@ class ThirdComponent extends Component {
   };
 
   render() {
-    const { name, age, country } = this.props; //destructure
+    const { name, age, country } = this.state; //destructure
 
     return (
       <div>
